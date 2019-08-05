@@ -21,5 +21,37 @@ public class Benificiary implements Serializable {
 	
 	@Column(name = "nickname", nullable = false)
 	private String nickname;
+
+	public int getBenificiaryId() {
+		return benificiaryId;
+	}
+
+	public void setBenificiaryId(int benificiaryId) {
+		this.benificiaryId = benificiaryId;
+	}
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getBenificiaryIfsc() {
+		return benificiaryIfsc;
+	}
+
+	public void setBenificiaryIfsc(String benificiaryIfsc) {
+		this.benificiaryIfsc = benificiaryIfsc;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	
 }

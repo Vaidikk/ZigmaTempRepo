@@ -25,5 +25,46 @@ public class Account implements Serializable {
 	@ManyToOne(targetEntity = Branch.class)
 	@JoinColumn(name = "ifsc", referencedColumnName = "ifsc", nullable = false)
 	private String ifsc;
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public double getAccountBalance() {
+		return accountBalance;
+	}
+
+	public void setAccountBalance(double accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+
+	public String getAccountTitle() {
+		return accountTitle;
+	}
+
+	public void setAccountTitle(String accountTitle) {
+		this.accountTitle = accountTitle;
+	}
+
+	public String getIfsc() {
+		return ifsc;
+	}
+
+	public void setIfsc(String ifsc) {
+		this.ifsc = ifsc;
+	}
+	
 	
 }

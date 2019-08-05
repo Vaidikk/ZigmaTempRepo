@@ -10,6 +10,6 @@ public interface BranchService {
 	void create(Branch branch);
 	void edit(Branch branch);
 	void remove(Branch branch);
-	Branch findBranchById(int ifsc);
+	Branch findBranchById(String ifsc);
 	List<Branch> findAllBranches();
 }

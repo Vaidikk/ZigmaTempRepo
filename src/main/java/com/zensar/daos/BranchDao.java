@@ -9,6 +9,6 @@ public interface BranchDao {
 		void insert(Branch branch);
 		void update(Branch branch);
 		void delete(Branch branch);
-		Branch getByIFSC(int ifsc);
+		Branch getByIFSC(String ifsc);
 		List <Branch> getAllBranches();
 }

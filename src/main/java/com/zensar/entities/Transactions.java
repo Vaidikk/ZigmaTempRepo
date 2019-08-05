@@ -31,5 +31,61 @@ public class Transactions implements Serializable {
 	
 	@Column(name = "recieverAccountNumber", nullable = false)
 	private int recieverAccountNumber;
+
+	public int getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(int transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	public String getTransactionMode() {
+		return transactionMode;
+	}
+
+	public void setTransactionMode(String transactionMode) {
+		this.transactionMode = transactionMode;
+	}
+
+	public String getTransactionTime() {
+		return transactionTime;
+	}
+
+	public void setTransactionTime(String transactionTime) {
+		this.transactionTime = transactionTime;
+	}
+
+	public double getTransactionAmount() {
+		return transactionAmount;
+	}
+
+	public void setTransactionAmount(double transactionAmount) {
+		this.transactionAmount = transactionAmount;
+	}
+
+	public int getRecieverAccountNumber() {
+		return recieverAccountNumber;
+	}
+
+	public void setRecieverAccountNumber(int recieverAccountNumber) {
+		this.recieverAccountNumber = recieverAccountNumber;
+	}
 	
 }

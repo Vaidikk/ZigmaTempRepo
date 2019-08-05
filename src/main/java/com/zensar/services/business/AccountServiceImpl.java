@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.zensar.daos.AccountDao;
 import com.zensar.entities.Account;
+
 @Service
 @Transactional
 public class AccountServiceImpl implements AccountService {
@@ -20,25 +21,40 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public void edit(Account account) {
 		// TODO Auto-generated method stub
-
+		Account dbAccount=findAccountById(account.getAccountNumber());
+		if(dbAccount!=null){
+			dbAccount.setAccountBalance(account.getAccountBalance());
+			dbAccount.setAccountNumber(account.getAccountNumber());
+			dbAccount.setAccountTitle(account.getAccountTitle());
+			dbAccount.setAccountType(account.getAccountType());
+			dao.update(dbAccount);
+		}
+		else
+			System.out.println("Sorry! Account does not exist.");
 	}
 
 	@Override
 	public void remove(Account account) {
 		// TODO Auto-generated method stub
-
+		Account dbAccount=findAccountById(account.getAccountNumber());
+		if(dbAccount!=null){
+			
+			dao.delete(dbAccount);
+		}
+		else
+			System.out.println("Sorry! Account does not exist.");
 	}
 
 	@Override
 	public Account findAccountById(int accountNumber) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getByAccountNumber(accountNumber);
 	}
 
 	@Override
 	public List<Account> findAllAccounts() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllAccounts();
 	}
 
 }

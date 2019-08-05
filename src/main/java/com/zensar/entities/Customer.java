@@ -35,4 +35,68 @@ public class Customer implements Serializable{
 	
 	@Column(name = "aadhar", nullable = false)
 	private int aadhar;
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public int getCrn() {
+		return crn;
+	}
+
+	public void setCrn(int crn) {
+		this.crn = crn;
+	}
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public int getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(int mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getAadhar() {
+		return aadhar;
+	}
+
+	public void setAadhar(int aadhar) {
+		this.aadhar = aadhar;
+	}
 }

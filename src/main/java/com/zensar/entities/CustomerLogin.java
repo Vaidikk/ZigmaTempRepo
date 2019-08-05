@@ -15,5 +15,21 @@ public class CustomerLogin implements Serializable {
 	
 	@Column(name = "password", nullable = false)
 	private String password;
+
+	public int getCrn() {
+		return crn;
+	}
+
+	public void setCrn(int crn) {
+		this.crn = crn;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 }
