@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.zensar.entities.Branch;
 
+@Repository
 public class BranchDaoImpl implements BranchDao {
 	@Autowired
 	HibernateTemplate ht;
@@ -29,7 +31,7 @@ public class BranchDaoImpl implements BranchDao {
 	}
 
 	@Override
-	public Branch getByIFSC(int ifsc) {
+	public Branch getByIFSC(String ifsc) {
 		// TODO Auto-generated method stub
 		return ht.get(Branch.class, ifsc);
 	}

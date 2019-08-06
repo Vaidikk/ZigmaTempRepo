@@ -35,6 +35,23 @@ public class Customer implements Serializable{
 	
 	@Column(name = "aadhar", nullable = false)
 	private int aadhar;
+	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer(int customerId, int crn, int accountNumber, String customerName, int mobileNumber, String email,
+			String address, int aadhar) {
+		super();
+		this.customerId = customerId;
+		this.crn = crn;
+		this.accountNumber = accountNumber;
+		this.customerName = customerName;
+		this.mobileNumber = mobileNumber;
+		this.email = email;
+		this.address = address;
+		this.aadhar = aadhar;
+	}
 
 	public int getCustomerId() {
 		return customerId;
@@ -99,4 +116,10 @@ public class Customer implements Serializable{
 	public void setAadhar(int aadhar) {
 		this.aadhar = aadhar;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 }

@@ -2,9 +2,14 @@ package com.zensar.services.business;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.zensar.daos.BenificiaryDao;
 import com.zensar.entities.Benificiary;
 
+@Service
+@Transactional
 public class BenificiaryServiceImpl implements BenificiaryService {
 	private BenificiaryDao dao;
 	@Override

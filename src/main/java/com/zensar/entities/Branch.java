@@ -21,6 +21,18 @@ public class Branch implements Serializable {
 	
 	@Column(name = "branchAddress", nullable = false)
 	private String branchAddress;
+	
+	public Branch() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Branch(String ifsc, int adminId, String branchName, String branchAddress) {
+		super();
+		this.ifsc = ifsc;
+		this.adminId = adminId;
+		this.branchName = branchName;
+		this.branchAddress = branchAddress;
+	}
 
 	public String getIfsc() {
 		return ifsc;
@@ -53,5 +65,10 @@ public class Branch implements Serializable {
 	public void setBranchAddress(String branchAddress) {
 		this.branchAddress = branchAddress;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }

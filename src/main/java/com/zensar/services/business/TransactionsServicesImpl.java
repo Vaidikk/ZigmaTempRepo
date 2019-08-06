@@ -2,9 +2,14 @@ package com.zensar.services.business;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.zensar.daos.TransactionsDao;
 import com.zensar.entities.Transactions;
 
+@Service
+@Transactional
 public class TransactionsServicesImpl implements TransactionsService {
 	private TransactionsDao dao;
 	@Override

@@ -16,6 +16,16 @@ public class CustomerLogin implements Serializable {
 	@Column(name = "password", nullable = false)
 	private String password;
 
+	public CustomerLogin() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public CustomerLogin(int crn, String password) {
+		super();
+		this.crn = crn;
+		this.password = password;
+	}
+
 	public int getCrn() {
 		return crn;
 	}
@@ -31,5 +41,10 @@ public class CustomerLogin implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }

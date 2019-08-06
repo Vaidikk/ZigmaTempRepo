@@ -2,9 +2,14 @@ package com.zensar.services.business;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.zensar.daos.CustomerLoginDao;
 import com.zensar.entities.CustomerLogin;
 
+@Service
+@Transactional
 public class CustomerLoginServiceImpl implements CustomerLoginService {
 	private CustomerLoginDao dao;
 	@Override

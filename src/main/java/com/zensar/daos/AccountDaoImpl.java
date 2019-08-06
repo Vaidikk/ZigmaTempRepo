@@ -7,10 +7,12 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.zensar.entities.Account;
+
 @Repository
 public class AccountDaoImpl implements AccountDao {
+	
 	@Autowired
-	HibernateTemplate ht;
+	private HibernateTemplate ht;
 	@Override
 	public void insert(Account account) {
 		// TODO Auto-generated method stub

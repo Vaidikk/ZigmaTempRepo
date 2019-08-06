@@ -21,6 +21,18 @@ public class Benificiary implements Serializable {
 	
 	@Column(name = "nickname", nullable = false)
 	private String nickname;
+	
+	public Benificiary() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Benificiary(int benificiaryId, int accountNumber, String benificiaryIfsc, String nickname) {
+		super();
+		this.benificiaryId = benificiaryId;
+		this.accountNumber = accountNumber;
+		this.benificiaryIfsc = benificiaryIfsc;
+		this.nickname = nickname;
+	}
 
 	public int getBenificiaryId() {
 		return benificiaryId;
@@ -53,5 +65,10 @@ public class Benificiary implements Serializable {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }

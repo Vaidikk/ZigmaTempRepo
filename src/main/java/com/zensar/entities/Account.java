@@ -9,6 +9,19 @@ import javax.persistence.*;
 public class Account implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	public Account() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Account(int accountNumber, String accountType, double accountBalance, String accountTitle, String ifsc) {
+		super();
+		this.accountNumber = accountNumber;
+		this.accountType = accountType;
+		this.accountBalance = accountBalance;
+		this.accountTitle = accountTitle;
+		this.ifsc = ifsc;
+	}
+
 	@Id
     @Column(name = "accountNumber", unique = true)
 	private int accountNumber;
@@ -65,6 +78,11 @@ public class Account implements Serializable {
 	public void setIfsc(String ifsc) {
 		this.ifsc = ifsc;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 	
 }

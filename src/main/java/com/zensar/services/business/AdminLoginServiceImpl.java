@@ -2,15 +2,25 @@ package com.zensar.services.business;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.zensar.daos.AdminLoginDao;
 
 import com.zensar.entities.AdminLogin;
 
+@Service
+@Transactional
 public class AdminLoginServiceImpl implements AdminLoginService {
+	
+	@Autowired
 	private AdminLoginDao dao;
+	
 	@Override
 	public void create(AdminLogin adminLogin) {
 		// TODO Auto-generated method stub
+		System.out.println("$$$Inside Service: " + adminLogin);
 		dao.insert(adminLogin);
 	}
 

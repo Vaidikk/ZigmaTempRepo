@@ -31,6 +31,22 @@ public class Transactions implements Serializable {
 	
 	@Column(name = "recieverAccountNumber", nullable = false)
 	private int recieverAccountNumber;
+	
+	public Transactions() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Transactions(int transactionId, int accountNumber, String transactionType, String transactionMode,
+			String transactionTime, double transactionAmount, int recieverAccountNumber) {
+		super();
+		this.transactionId = transactionId;
+		this.accountNumber = accountNumber;
+		this.transactionType = transactionType;
+		this.transactionMode = transactionMode;
+		this.transactionTime = transactionTime;
+		this.transactionAmount = transactionAmount;
+		this.recieverAccountNumber = recieverAccountNumber;
+	}
 
 	public int getTransactionId() {
 		return transactionId;
@@ -87,5 +103,10 @@ public class Transactions implements Serializable {
 	public void setRecieverAccountNumber(int recieverAccountNumber) {
 		this.recieverAccountNumber = recieverAccountNumber;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }
