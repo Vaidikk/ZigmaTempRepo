@@ -13,13 +13,13 @@ public class Customer implements Serializable{
 	@Column(name = "customerId", unique = true)
 	private int customerId;
 	
-	@ManyToOne(targetEntity = CustomerLogin.class)
-	@JoinColumn(name = "crn", referencedColumnName = "crn", nullable = false)
-	private int crn;
+	@ManyToOne
+	@JoinColumn(name = "crn", referencedColumnName = "crn", nullable = true)
+	private CustomerLogin customerLogin;
 	
-	@ManyToOne(targetEntity = Account.class)
-	@JoinColumn(name = "accountNumber", referencedColumnName = "accountNumber", nullable = false)
-	private int accountNumber;
+	@OneToOne
+	@JoinColumn(name = "accountNumber", referencedColumnName = "accountNumber", nullable = true)
+	private Account account;
 	
 	@Column(name = "customerName", nullable = false)
 	private String customerName;
@@ -38,20 +38,16 @@ public class Customer implements Serializable{
 	
 	public Customer() {
 		// TODO Auto-generated constructor stub
-	}
+	}	
 
-	public Customer(int customerId, int crn, int accountNumber, String customerName, int mobileNumber, String email,
-			String address, int aadhar) {
-		super();
-		this.customerId = customerId;
-		this.crn = crn;
-		this.accountNumber = accountNumber;
-		this.customerName = customerName;
-		this.mobileNumber = mobileNumber;
-		this.email = email;
-		this.address = address;
-		this.aadhar = aadhar;
-	}
+	/*
+	 * public Customer(int customerId, int crn, int accountNumber, String
+	 * customerName, int mobileNumber, String email, String address, int aadhar) {
+	 * super(); this.customerId = customerId; this.crn = crn; this.accountNumber =
+	 * accountNumber; this.customerName = customerName; this.mobileNumber =
+	 * mobileNumber; this.email = email; this.address = address; this.aadhar =
+	 * aadhar; }
+	 */
 
 	public int getCustomerId() {
 		return customerId;
@@ -61,21 +57,16 @@ public class Customer implements Serializable{
 		this.customerId = customerId;
 	}
 
-	public int getCrn() {
-		return crn;
-	}
-
-	public void setCrn(int crn) {
-		this.crn = crn;
-	}
-
-	public int getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(int accountNumber) {
-		this.accountNumber = accountNumber;
-	}
+	/*
+	 * public int getCrn() { return crn; }
+	 * 
+	 * public void setCrn(int crn) { this.crn = crn; }
+	 * 
+	 * public int getAccountNumber() { return accountNumber; }
+	 * 
+	 * public void setAccountNumber(int accountNumber) { this.accountNumber =
+	 * accountNumber; }
+	 */
 
 	public String getCustomerName() {
 		return customerName;
@@ -119,6 +110,29 @@ public class Customer implements Serializable{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public CustomerLogin getCustomerLogin() {
+		return customerLogin;
+	}
+
+	public void setCustomerLogin(CustomerLogin customerLogin) {
+		this.customerLogin = customerLogin;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", customerLogin=" + customerLogin + ", account=" + account
+				+ ", customerName=" + customerName + ", mobileNumber=" + mobileNumber + ", email=" + email
+				+ ", address=" + address + ", aadhar=" + aadhar + "]";
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 	
 	

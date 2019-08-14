@@ -2,15 +2,19 @@ package com.zensar.services.business;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.zensar.daos.CustomerDao;
 import com.zensar.entities.Customer;
+import com.zensar.entities.CustomerLogin;
 
 @Service
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
+	
+	@Autowired
 	private CustomerDao dao;
 	@Override
 	public void create(Customer customer) {
@@ -55,6 +59,18 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> findAllCustomers() {
 		// TODO Auto-generated method stub
 		return dao.getAll();
+	}
+
+	@Override
+	public Customer findCustomerByLogin(CustomerLogin customerLogin) {
+		// TODO Auto-generated method stub
+		
+		for(Customer cust: findAllCustomers())
+		{
+			if(cust.getCustomerLogin().equals(customerLogin))
+				return cust;
+		}		
+		return null;
 	}
 
 }

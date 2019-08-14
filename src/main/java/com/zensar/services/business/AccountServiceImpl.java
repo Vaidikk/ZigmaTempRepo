@@ -1,5 +1,6 @@
 package com.zensar.services.business;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.zensar.daos.AccountDao;
 import com.zensar.entities.Account;
+import com.zensar.entities.Customer;
 
 @Service
 @Transactional
@@ -55,6 +57,51 @@ public class AccountServiceImpl implements AccountService {
 	public List<Account> findAllAccounts() {
 		// TODO Auto-generated method stub
 		return dao.getAllAccounts();
+	}
+	
+	
+
+	@Override
+	public Account findAccountByCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		
+		for(Account acc: findAllAccounts()) {
+			if(acc.getCustomer().equals(customer))
+				return acc;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Account> findAllAccountsByType(String accountType) {
+		// TODO Auto-generated method stub
+		
+		List<Account> list = new ArrayList<Account>();
+		
+		for(Account acc: findAllAccounts()) {
+			if(acc.getAccountType().equals(accountType))
+				list.add(acc);
+		}
+		return list;
+	}
+
+	@Override
+	public void debit(Account account) {
+		// TODO Auto-generated method stub
+		
+		Account dbAccount = findAccountById(account.getAccountNumber());
+		dbAccount.setAccountBalance(dbAccount.getAccountBalance()-account.getAccountBalance());
+		edit(dbAccount);
+	}
+
+	@Override
+	public void credit(Account account) {
+		// TODO Auto-generated method stub
+		
+		Account dbAccount = findAccountById(account.getAccountNumber());
+		dbAccount.setAccountBalance(dbAccount.getAccountBalance()+account.getAccountBalance());
+		edit(dbAccount);
+		
 	}
 
 }

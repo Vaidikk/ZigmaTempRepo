@@ -26,13 +26,13 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 		DataSourceTransactionManagerAutoConfiguration.class, 
 		HibernateJpaAutoConfiguration.class
 		})
-public class ZigmaBankingSolutionsApplication {
+public class ZigmaTempRepo {
 
 	@Autowired
 	private Environment env;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(ZigmaBankingSolutionsApplication.class, args);
+		SpringApplication.run(ZigmaTempRepo.class, args);
 	}
 	
 	@Bean(name="dataSource")

@@ -26,6 +26,14 @@ public class Account implements Serializable {
     @Column(name = "accountNumber", unique = true)
 	private int accountNumber;
 	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 	@Column(name = "accountType", nullable = false)//Enum lagana hai
 	private String accountType;
 	
@@ -34,6 +42,11 @@ public class Account implements Serializable {
 	
 	@Column(name = "accountTitle", nullable = false)
 	private String accountTitle;
+	
+	
+	@OneToOne
+	@JoinColumn(name = "customerId", referencedColumnName = "customerId", nullable = false)
+	private Customer customer;
 	
 	@ManyToOne(targetEntity = Branch.class)
 	@JoinColumn(name = "ifsc", referencedColumnName = "ifsc", nullable = false)

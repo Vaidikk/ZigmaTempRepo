@@ -36,20 +36,36 @@ public class CustomerResource {
 		return customerService.findCustomerById(customerId);
 	}
 	
+	/*
+	 * @PostMapping public String createCustomer(
+	 * 
+	 * @RequestParam("customerId")int customerId,
+	 * 
+	 * @RequestParam("crn")int crn,
+	 * 
+	 * @RequestParam("accountNumber")int accountNumber,
+	 * 
+	 * @RequestParam("customerName")String customerName,
+	 * 
+	 * @RequestParam("mobileNumber")int mobileNumber,
+	 * 
+	 * @RequestParam("email")String email,
+	 * 
+	 * @RequestParam("address")String address,
+	 * 
+	 * @RequestParam("aadhar")int aadhar) { Customer customer = new
+	 * Customer(customerId, crn, accountNumber, customerName, mobileNumber, email,
+	 * address, aadhar); customerService.create(customer);
+	 * 
+	 * return "Customer: "+customerId+", created successfully"; }
+	 */
 	@PostMapping
-	public String createCustomer(
-			@RequestParam("customerId")int customerId, 
-			@RequestParam("crn")int crn,
-			@RequestParam("accountNumber")int accountNumber,
-			@RequestParam("customerName")String customerName,
-			@RequestParam("mobileNumber")int mobileNumber,
-			@RequestParam("email")String email,
-			@RequestParam("address")String address,
-			@RequestParam("aadhar")int aadhar) {
-		Customer customer = new Customer(customerId, crn, accountNumber, customerName, mobileNumber, email, address, aadhar);
+	public String createCustomer(@RequestBody Customer customer) {
+		
+		System.out.println("$$$Customer::"+customer);
 		customerService.create(customer);
 		
-		return "Customer: "+customerId+", created successfully";
+		return "Customer: "+customer.getCustomerId()+", created successfully";
 	}
 	
 	@PutMapping

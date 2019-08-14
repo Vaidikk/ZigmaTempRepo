@@ -10,6 +10,7 @@ import com.zensar.entities.Customer;
 
 @Repository
 public class CustomerDaoImpl implements CustomerDao {
+	
 	@Autowired
 	HibernateTemplate ht;
 	@Override
